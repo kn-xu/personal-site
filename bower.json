@@ -1,0 +1,10 @@
+{
+  "name": "personal",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/kn-xu/personal-site",
+  "dependencies": {
+    "angular-ui-router": "^1.0.12"
+  }
+}
