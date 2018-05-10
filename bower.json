@@ -10,6 +10,7 @@
     "angular-bootstrap": "^2.5.0",
     "d3": "^5.2.0",
     "chart.js": "^2.7.2",
-    "angular-ui-notification": "^0.3.6"
+    "angular-ui-notification": "^0.3.6",
+    "moment": "^2.22.1"
   }
 }
