@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h3 class="modal-title">Test your reflex</h3>
+</div>
+<div class="modal-body">
+    <legend>Directions</legend>
+    <p>Test your reflexes with this simple application! Click the begin button to start and when the yellow box below
+        turns green, click the image to stop the timer to see how many milliseconds it takes for you to react.
+    </p>
+    <hr>
+    <div class="canvas-container">
+        <canvas class="reflex-canvas" ng-click="ctrl.finishTest()"></canvas>
+        <button class="reflex-btn btn btn-danger btn-lg" ng-click="ctrl.beginTest()" ng-if="!ctrl.testing">{{ ctrl.reflexBtnText }}</button>
+    </div>
+    <h2 ng-if="ctrl.completedTest && ctrl.reflexTime">Reflex Time: {{ ctrl.reflexTime }}ms</h2>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

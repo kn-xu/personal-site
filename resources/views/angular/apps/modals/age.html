@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h3 class="modal-title">Select your birthday to see how old you are.</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="datepicker-container">
+                <div uib-datepicker
+                     class="well well-sm custom-well"
+                     ng-click="ctrl.calculateAge()"
+                     ng-model="ctrl.birthday"></div>
+            </div>
+        </div>
+        <div class="col-lg-6" ng-if="ctrl.birthday">
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>You selected {{ ctrl.displayBirthday }} as your birthday, therefore you are <u>{{ ctrl.displayAge }}</u> {{ ctrl.displayTime }} old!</label>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Select your age in different measurements:</label>
+                    <div class="btn-group">
+                        <label class="btn btn-primary"
+                               ng-model="ctrl.selectedTime"
+                               ng-repeat="time in ctrl.timeMeasurements"
+                               ng-click="ctrl.selectTimeMeasurement()"
+                               uib-btn-radio="time">
+                            {{ time.displayName }}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

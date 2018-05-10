@@ -2,12 +2,8 @@ vendor/
 node_modules/
 bower_components/
 npm-debug.log
+storage/
 public/
-
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-storage/*.key
-.env.*.php
-.env.php
 .env
+.DS_Store
+.idea/

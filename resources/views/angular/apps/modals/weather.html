@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <h3 class="modal-title">Weather</h3>
+</div>
+<div class="modal-body">
+    <legend>Location</legend>
+    <p>In the input box below, enter in either the city name or zipcode of the area you want to view the weather report
+        for.</p>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="input-group">
+                <input class="form-control" ng-model="ctrl.weatherQuery">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" ng-click="ctrl.searchWeatherReport()">Search</button>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <label class="radio-inline weather-radio-btn" ng-repeat="type in ctrl.queryTypes">
+                <input type="radio" ng-value="type.value" ng-model='ctrl.queryType'>{{ type.name }}
+            </label>
+        </div>
+    </div>
+
+    <div class="weather-info-container" ng-if="ctrl.searched">
+        <legend>Weather Information</legend>
+        <square-spinner show="ctrl.searching"></square-spinner>
+        <div ng-if="!ctrl.searching" class="row">
+            <div class="col-lg-6">
+                <strong>Location</strong>: {{ ctrl.weatherData.name }}
+                <br><strong>Country Code</strong>: US
+                <br><span class="capitalize"><strong>Situation</strong>: {{ ctrl.weatherData.weather[0].description }}</span>
+                <br><strong>Wind</strong>: Travelling at {{ ctrl.weatherData.wind.speed }} m/s
+            </div>
+            <div class="col-lg-6">
+                <strong>Humidity</strong>: {{ ctrl.weatherData.main.humidity | percentage: 2 }}
+                <br><strong>Current Temperature</strong>: {{ ctrl.weatherData.main.temp | number: 2 }} &#x2109;
+                <br><strong>Max Temperature</strong>: {{ ctrl.weatherData.main.temp_max | number: 2 }} &#x2109;
+                <br><strong>Min Temperature</strong>: {{ ctrl.weatherData.main.temp_min | number: 2 }} &#x2109;
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

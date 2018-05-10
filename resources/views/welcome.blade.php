@@ -4,62 +4,46 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <base href="/" />
     <title>Kevin Xu</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <style type="text/css">
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-        }
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-        .full-height {
-            height: 100vh;
-        }
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        .position-ref {
-            position: relative;
-        }
-        .content {
-            text-align: center;
-        }
-        .title {
-            font-size: 84px;
-        }
-        .background {
-            position: absolute;
-            display: block;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-    </style>
-    <script src="/js/scripts.npm.js"></script>
-    <script src="/js/scripts.bower.js"></script>
+    <link rel="stylesheet" href="/css/app.css">
 
-    <script src="/js/main.js"></script>
+    <!-- Scripts -->
+    <!-- Imported Assets via bower/npm -->
+    <script src="/js/app.js"></script>
+    <script src="/js/library.js"></script>
+
+    <!-- Self-wrote JS code on Angular -->
+    <script src="/js/custom.js"></script>
+    {{--<script src="/js/apps.js"></script>--}}
 </head>
 <body>
-    <canvas class="background"></canvas>
-    <div class="content flex-center position-ref full-height">
-        <div class="title m-b-md">
-            Hi Shaina
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="" ui-sref="home.resume">
+                    resume
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="" ui-sref="home.apps">
+                    apps
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div ui-view></div>
         </div>
     </div>
-    <script src="/js/background.js"></script>
+</div>
+    <canvas class="background"></canvas>
 </body>
 </html>

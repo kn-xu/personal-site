@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::any('{path?}', function()
+{
     return view('welcome');
-});
+})->where("path", ".+");
