@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h3 class="modal-title">Prime Factors</h3>
+</div>
+<div class="modal-body">
+    <legend>Definition</legend>
+    <p>A prime factor is a combination of a prime number and a factor. For instance, prime factors of 15 are 3 and 5. 3
+        and 5 are both factors of 15, but individually, both are also prime numbers. Use the input box below to find the
+        total number of prime factors your inputted number has.</p>
+    <hr>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input class="form-control" ng-model="ctrl.input.number"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" ng-click="ctrl.findPrimeFactors()">Find</button>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg-6" ng-if='ctrl.computedNumber == ctrl.input.number && ctrl.input.number'>
+            <div class="well">
+                <square-spinner show="ctrl.computing"></square-spinner>
+                <div ng-if="!ctrl.computing">
+                    <p>
+                        The number of prime factors <strong>{{ ctrl.input.number | number }}</strong> has is: <strong>{{ ctrl.input.primeFactors | number }}</strong>
+                    </p>
+
+                    <h5>List of Prime Factors:</h5>
+                    <ul>
+                        <li ng-repeat="primeFactor in ctrl.input.primeFactoryList track by $index">
+                            <span>{{ primeFactor | number }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

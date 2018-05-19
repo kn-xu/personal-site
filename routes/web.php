@@ -11,7 +11,8 @@
 |
 */
 
-Route::any('{path?}', function()
-{
+Route::any('{path?}', function () {
     return view('welcome');
-})->where("path", ".+");
+})->where("all", "^((?!api).)*");
+
+Route::get("api/user", "UserController@client");

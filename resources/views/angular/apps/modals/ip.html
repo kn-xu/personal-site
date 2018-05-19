@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h3 class="modal-title">What is my IP?</h3>
+</div>
+<div class="modal-body">
+    <div class="well">
+        <square-spinner show="ctrl.loading"></square-spinner>
+        <div ng-if="!ctrl.loading">
+            <h1 class="ip-container">{{ ctrl.userInfo.IP }}</h1>
+            <hr>
+            <p>
+                <label><strong>Additional Information:</strong></label><br>
+                <strong>User-Agent</strong>: {{ ctrl.userInfo.userAgent }}<br>
+                <strong>Language</strong>: {{ ctrl.userInfo.language }}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

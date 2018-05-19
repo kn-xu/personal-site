@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title">Credit Card Validator</h3>
+</div>
+<div class="modal-body">
+    <legend>Directions</legend>
+    <p>Insert the credit card number you wish to test along with the credit card company it's for.</p>
+    <div class="row">
+        <div class="col-lg-6" ng-class="{'has-error': !ctrl.valid}">
+            <input class="form-control"
+                   placeholder="Enter Credit Card Number"
+                   ng-model="ctrl.creditCardNumber">
+        </div>
+        <div class="col-lg-3">
+            <oi-select oi-options="cc.name as cc.uiName for cc in ctrl.cardTypes"
+                       ng-model="ctrl.creditCardType"
+                       placeholder="Type"
+                       autofocus
+                       tabindex="1">
+            </oi-select>
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-primary" ng-disabled='!ctrl.creditCardNumber || !ctrl.creditCardType' ng-click="ctrl.validateCreditCard()">Validate</button>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

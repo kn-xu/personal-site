@@ -29,24 +29,49 @@
             'daysOfAge': appFactory.ageApplicationModal,
             'cryptoTracker': appFactory.cryptoApplicationModal,
             'reflexTester': appFactory.reflexApplicationModal,
-            'weatherReport': appFactory.weatherApplicationModal
+            'weatherReport': appFactory.weatherApplicationModal,
+            'rockPaperScissors': appFactory.rpsApplicationModal,
+            'primeFactors': appFactory.primeFactorsApplicationModal,
+            'asciiClock': appFactory.clockApplicationModal,
+            'giphy': appFactory.giphyApplicationModal,
+            'stopWatch': appFactory.stopWatchApplicationModal,
+            'creditCard': appFactory.ccApplicationModal,
+            'ip': appFactory.ipApplicationModal
         };
         ctrl.applicationList = [
             {
                 name: 'daysOfAge',
                 description: 'How many days/min/seconds old are you?'
-            },
-            {
+            }, {
                 name: 'cryptoTracker',
                 description: 'Bitcoin Price Tracker'
-            },
-            {
+            }, {
                 name: 'reflexTester',
                 description: 'Reflex Tester'
-            },
-            {
+            }, {
                 name: 'weatherReport',
                 description: 'Weather Reporter'
+            }, {
+                name: 'rockPaperScissors',
+                description: 'Rock.Paper.Scissors'
+            }, {
+                name: 'primeFactors',
+                description: 'Prime Factors'
+            }, {
+                name: 'asciiClock',
+                description: 'ASCII Digital Clock'
+            }, {
+                name: 'giphy',
+                description: 'Giphy'
+            }, {
+                name: 'stopWatch',
+                description: 'Stop Watch'
+            }, {
+                name: 'creditCard',
+                description: 'Credit Card Validator'
+            }, {
+                name: 'ip',
+                description: 'What is my IP Address?'
             }
         ];
 

@@ -9,7 +9,8 @@
             'app.filters',
             'ui.bootstrap',
             'chart.js',
-            'ui-notification'
+            'ui-notification',
+            'oi.select'
         ])
         .config(['$locationProvider', function ($locationProvider) {
             $locationProvider.html5Mode(true);

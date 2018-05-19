@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <h3 class="modal-title">Rock Paper Scissors</h3>
+</div>
+<div class="modal-body">
+    <div class="table-responsive">
+        <table class="table table-condensed table-bordered rps-score-table">
+            <caption class="text-center h4"><strong>Scoreboard</strong></caption>
+            <tbody>
+            <tr>
+                <td width="50%"><strong>Opponent Score</strong></td>
+                <td width="50%"><strong>Your Score</strong></td>
+            </tr>
+            <tr>
+                <td width="50%">{{ ctrl.score.ai | number }}</td>
+                <td width="50%">{{ ctrl.score.user | number }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div clas="table-responsive">
+        <table class="table table-condensed rps-game-table">
+            <caption class="text-center h4"><strong>Game</strong></caption>
+            <tbody>
+            <tr>
+                <td width="33%"></td>
+                <td width="33%">
+                    <div class="rps-question-container">
+                        <img class="rps-img" ng-src="{{ ctrl.aiChoiceUrl }}">
+                    </div>
+                </td>
+                <td width="33%"></td>
+            </tr>
+            <tr>
+                <td width="33%" ng-repeat="rps in ctrl.rps">
+                    <div class="rps-img-container">
+                        <img class="rps-img" ng-src="{{ rps.imageUrl }}">
+                        <div class="rps-select-container">
+                            <div ng-click="ctrl.makeChoice(rps.value)" class="btn btn-success">Select</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

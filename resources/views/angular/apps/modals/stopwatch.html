@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h3 class="modal-title">Stop Watch</h3>
+</div>
+<div class="modal-body">
+    <div class="well stopwatch-container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="stopwatch-counter">
+                    <span ng-if="(ctrl.elapsedTime + ctrl.runningTime) > 0">{{ ctrl.elapsedTime + ctrl.runningTime | stopWatch }}</span>
+                    <span ng-if="(ctrl.elapsedTime + ctrl.runningTime) < 1">00:00:00:000</span>
+                </h1>
+            </div>
+        </div>
+        <button class="btn btn-primary" ng-click="ctrl.start()">Start</button>
+        <button class="btn btn-danger" ng-click="ctrl.stop()">Stop</button>
+        <button class="btn btn-default" ng-click="ctrl.reset()">Reset</button>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="ctrl.closeModal()">Close</button>
+</div>

@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "angular-chart.js": "^1.1.1",
+        "figlet": "^1.2.0",
         "oi.select": "^0.2.21"
     }
 }

@@ -20,7 +20,6 @@
 
     <!-- Self-wrote JS code on Angular -->
     <script src="/js/custom.js"></script>
-    {{--<script src="/js/apps.js"></script>--}}
 </head>
 <body>
 <div id="wrapper">

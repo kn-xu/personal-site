@@ -15,6 +15,7 @@ mix.disableNotifications();
 mix.js('resources/assets/js/app.js', 'public/js')
     .combine(
         [
+            'node_modules/figlet/lib/figlet.js',
             'bower_components/angular/angular.min.js',
             'bower_components/angular-ui-router/release/angular-ui-router.min.js',
             'bower_components/angular-animate/angular-animate.min.js',
@@ -35,4 +36,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
         ],
         'public/js/custom.js'
     )
-    .copyDirectory('resources/views/angular', 'public/views/angular');
+    .copy('node_modules/figlet/fonts/Standard.flf', 'public/fonts/Standard.flf')
+    .copyDirectory('resources/views/angular', 'public/views/angular')
+    .copyDirectory('resources/assets/imgs', 'public/imgs');
