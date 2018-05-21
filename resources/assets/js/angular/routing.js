@@ -4,6 +4,7 @@
             'ui.router',
             'ngAnimate',
             'app.smallApps',
+            'app.libs',
             'app.directives',
             'app.constants',
             'app.filters',
@@ -19,22 +20,18 @@
             $urlRouterProvider.otherwise("");
 
             $stateProvider
-                .state('home', {
-                    url: '',
-                    abstract: true
+                .state('resume', {
+                    url: '/resume',
+                    templateUrl: 'views/angular/resume/view.html'
                 })
-                    .state('home.resume', {
-                        url: '/resume',
-                        templateUrl: 'views/angular/resume/view.html'
-                    })
-                    .state('home.apps', {
-                        url: '/apps',
-                        templateUrl: 'views/angular/apps/view.html'
-                    })
-                    .state('home.apps.age', {
-                        url: '/age',
-                        templateUrl: 'views/angular/apps/age.html'
-                    })
+                .state('apps', {
+                    url: '/apps',
+                    templateUrl: 'views/angular/apps/view.html'
+                })
+                .state('libs', {
+                    url: '/libs',
+                    templateUrl: 'views/angular/libs/view.html'
+                })
 
         })
 })();

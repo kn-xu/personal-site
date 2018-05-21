@@ -575,7 +575,6 @@
              */
             function revertAiChoice() {
                 setTimeout(function () {
-                    debugger;
                     ctrl.aiChoiceUrl = CONSTANTS.RPS.QUESTION_MARK_IMAGE_URL;
                 }, 1000);
             }
@@ -655,14 +654,15 @@
          * @param $scope
          * @param $uibModalInstance
          * @param Notification
+         * @param $interval
          */
-        function clockAppController($scope, $uibModalInstance, Notification) {
+        function clockAppController($scope, $uibModalInstance, Notification, $interval) {
             var ctrl = this;
 
             ctrl.closeModal = closeModal;
 
             initTime();
-            setInterval(initTime, 1000);
+            $interval(initTime.bind(this), 1000);
 
             /**
              * Sets the time into ASCII
@@ -674,9 +674,7 @@
                         return;
                     }
                     ctrl.time = text;
-                    $scope.$apply();
                 });
-
             }
 
             /**
@@ -858,6 +856,14 @@
             }
         }
 
+        /**
+         * User IP App Controller
+         *
+         * @param $uibModalInstance
+         * @param httpFactory
+         * @param $q
+         * @param ErrorFactory
+         */
         function ipAppController($uibModalInstance, httpFactory, $q, ErrorFactory) {
             var ctrl = this;
 

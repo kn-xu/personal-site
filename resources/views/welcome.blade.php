@@ -22,27 +22,48 @@
     <script src="/js/custom.js"></script>
 </head>
 <body>
-<div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="" ui-sref="home.resume">
-                    resume
-                </a>
-            </li>
-            <li class="sidebar-brand">
-                <a href="" ui-sref="home.apps">
-                    apps
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div ui-view></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-lg-2 sidebar">
+                <nav class="navbar navbar-default navbar-fixed-side">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                                <span class="sr-only"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse" aria-expanded="false">
+                            <ul class="nav navbar-nav">
+                                <li class>
+                                    <a href="" ui-sref="resume">
+                                        resume
+                                    </a>
+                                </li>
+                                <li class>
+                                    <a href="" ui-sref="apps">
+                                        apps
+                                    </a>
+                                </li>
+                                <li class>
+                                    <a href="" ui-sref="libs">
+                                        libs
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-sm-9 col-lg-10 main-view">
+                <div class="ui-view-container">
+                    <div class="animated-view" ui-view></div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
     <canvas class="background"></canvas>
 </body>
 </html>
