@@ -916,7 +916,7 @@
          * @param url
          * @param params
          */
-        function get(url, params = null) {
+        function get(url, params) {
             if (params) {
                 return $http.get(url, {params: params});
             } else {
