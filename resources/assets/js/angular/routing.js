@@ -32,6 +32,10 @@
                     url: '/libs',
                     templateUrl: 'views/angular/libs/view.html'
                 })
+                .state('hb', {
+                    url: '/hb',
+                    templateUrl: 'views/angular/hb/view.html'
+                })
 
         })
 })();

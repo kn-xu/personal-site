@@ -11,7 +11,7 @@
     "upgrade": "node wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
   },
   "devDependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "bootstrap-sass": "^3.4.1",
     "bower": "^1.8.8",
     "cross-env": "^5.2.0",
@@ -23,6 +23,8 @@
   "dependencies": {
     "angular-chart.js": "^1.1.1",
     "figlet": "^1.2.3",
+    "hashids": "^1.2.2",
+    "node-sass": "^4.12.0",
     "nodejs": "0.0.0",
     "oi.select": "^0.2.21"
   }
