@@ -136,6 +136,7 @@
              * Calculates the age of the selected date
              */
             function calculateAge() {
+                if (!ctrl.birthday) return;
                 var currentTime = new Date();
                 var difference = currentTime - ctrl.birthday;
 
