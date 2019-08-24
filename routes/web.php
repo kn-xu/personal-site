@@ -16,3 +16,8 @@ Route::any('{path?}', function () {
 })->where("all", "^((?!api).)*");
 
 Route::get("api/user", "UserController@client");
+
+Route::get("api/heartbeats", "HeartbeatsController@get");
+//Route::post("api/heartbeat", "HeartbeatController@get");
+//Route::put("api/heartbeat", "HeartbeatController@get");
+//Route::delete("api/heartbeat", "HeartbeatController@get");

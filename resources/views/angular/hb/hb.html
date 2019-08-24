@@ -1,0 +1,24 @@
+<div class="jumbotron kx-jumbotron">
+    <h1 class="display-4">Heart Beats</h1>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="ctrl.newHeartBeat.">
+            </div>
+            <button class="btn btn-default"
+                    type="submit"
+                    role="button"
+                    ng-click="ctrl.addHb()">Add Heartbeat
+            </button>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row" ng-if="ctrl.hb.hits && ctrl.hb.hits.length">
+        <div class="col-lg-3" ng-repeat="hit in ctrl.hb.hits">
+            <div class="hit-card">
+                {{ hit.created_time }}
+            </div>
+        </div>
+    </div>
+</div>

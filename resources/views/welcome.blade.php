@@ -43,15 +43,20 @@
                                     </a>
                                 </li>
                                 <li class>
-                                    <a href="" ui-sref="apps">
-                                        apps
+                                    <a href="" ui-sref="hb">
+                                        hb
                                     </a>
                                 </li>
-                                <li class>
-                                    <a href="" ui-sref="libs">
-                                        libs
-                                    </a>
-                                </li>
+                                {{--<li class>--}}
+                                    {{--<a href="" ui-sref="apps">--}}
+                                        {{--apps--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li class>--}}
+                                    {{--<a href="" ui-sref="libs">--}}
+                                        {{--libs--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
                             </ul>
                         </div>
                     </div>

@@ -5,6 +5,7 @@
             'ngAnimate',
             'app.smallApps',
             'app.libs',
+            'app.hb',
             'app.directives',
             'app.constants',
             'app.filters',
@@ -31,6 +32,10 @@
                 .state('libs', {
                     url: '/libs',
                     templateUrl: 'views/angular/libs/view.html'
+                })
+                .state('hb', {
+                    url: '/hb',
+                    templateUrl: 'views/angular/hb/view.html'
                 })
 
         })

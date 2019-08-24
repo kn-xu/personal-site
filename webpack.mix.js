@@ -25,6 +25,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
             'bower_components/chart.js/dist/Chart.min.js',
             'node_modules/angular-chart.js/dist/angular-chart.js',
             'node_modules/oi.select/dist/select-tpls.js',
+            'node_modules/hashids/dist/hashids.min.js',
             'bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
             'bower_components/d3/d3.min.js',
             'node_modules/particlesjs/dist/particles.min.js',
