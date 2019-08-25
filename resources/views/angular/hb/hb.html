@@ -1,23 +1,51 @@
 <div class="jumbotron kx-jumbotron">
     <h1 class="display-4">Heart Beats</h1>
     <hr class="my-4">
-    <div class="row">
+    <div class="row" ng-if="ctrl.heartBeats.length < 1">
         <div class="col-lg-12">
-            <div class="form-group">
-                <input type="text" class="form-control" ng-model="ctrl.newHeartBeat.">
-            </div>
             <button class="btn btn-default"
+                    data-token="{{ csrf_token() }}"
                     type="submit"
                     role="button"
                     ng-click="ctrl.addHb()">Add Heartbeat
             </button>
         </div>
     </div>
+    <div class="row" ng-if="ctrl.heartBeats.length">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label class="control-label">URL</label>
+                <input class="form-control" ng-model="ctrl.heartBeats[0].hb_url" disabled="disabled">
+            </div>
+            <button type="button" class="btn btn-primary">Copy</button>
+        </div>
+    </div>
     <hr class="my-4">
-    <div class="row" ng-if="ctrl.hb.hits && ctrl.hb.hits.length">
-        <div class="col-lg-3" ng-repeat="hit in ctrl.hb.hits">
-            <div class="hit-card">
-                {{ hit.created_time }}
+    <div class="row">
+        <div class="col-lg-12">
+            <legend>
+                Hits
+            </legend>
+            <div class="table-responsive">
+                <table class="table table-bordered table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>User Agent</th>
+                        <th>IP Address</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="ctrl.heartBeats[0].hits.length" ng-repeat="hit in ctrl.heartBeats[0].hits">
+                            <td>{{ hit.created_at }}</td>
+                            <td>{{ hit.info.userAgent }}</td>
+                            <td>{{ hit.info.ip }}</td>
+                        </tr>
+                        <tr ng-if="ctrl.heartBeats[0].hits.length < 1">
+                            <td>No Data</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

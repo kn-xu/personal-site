@@ -30,13 +30,19 @@
 
         function init() {
             if (!ctrl.hashed_id) {
-                localStorage.setItem('hb', generateHashId());
+                ctrl.hashed_id = generateHashId();
+                localStorage.setItem('hb', ctrl.hashed_id);
                 ctrl.loading = false;
             } else {
                 const url = '/api/heartbeats?h=' + ctrl.hashed_id;
                 httpFactory.get(url)
                     .then(function(response) {
                         ctrl.heartBeats = response.data;
+                        ctrl.heartBeats[0].hb_url = window.location.hostname + '/' + ctrl.heartBeats[0].hb_url;
+
+                        for (var i = 0; i < ctrl.heartBeats[0].hits.length; i++) {
+                            ctrl.heartBeats[0].hits[i].info = JSON.parse(ctrl.heartBeats[0].hits[i].info);
+                        }
                     })
                     .catch(function(response) {
 
@@ -53,7 +59,26 @@
         }
 
         function addHeartBeat() {
+            ctrl.loading = true;
 
+            const url = '/api/heartbeats';
+            httpFactory.post(
+                url,
+                {
+                    hashed_id: localStorage.getItem('hb')
+                },
+                {
+                    "X-CSRF-TOKEN": $("meta[name='csrf-token']").attr('content')
+                })
+                    .then(function(response) {
+                        ctrl.heartBeats = response.data;
+                    })
+                    .catch(function(response) {
+
+                    })
+                    .finally(function(response) {
+                        ctrl.loading = false;
+                    })
         }
     }
 })();

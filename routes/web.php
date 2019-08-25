@@ -13,11 +13,13 @@
 
 Route::any('{path?}', function () {
     return view('welcome');
-})->where("all", "^((?!api).)*");
+})->where("all", "^((?!api|h).)*");
 
 Route::get("api/user", "UserController@client");
 
 Route::get("api/heartbeats", "HeartbeatsController@get");
-//Route::post("api/heartbeat", "HeartbeatController@get");
-//Route::put("api/heartbeat", "HeartbeatController@get");
-//Route::delete("api/heartbeat", "HeartbeatController@get");
+Route::post("api/heartbeats", "HeartbeatsController@post");
+//Route::put("api/heartbeats", "HeartbeatsController@put");
+//Route::delete("api/heartbeats", "HeartbeatsController@delete");
+
+Route::get("h/{h}/", "HitsController@get");

@@ -908,7 +908,8 @@
      */
     function httpFactory($http) {
         return {
-            get: get
+            get: get,
+            post: post
         };
 
         /**
@@ -923,6 +924,24 @@
             } else {
                 return $http.get(url);
             }
+        }
+
+        /**
+         * Post request
+         *
+         * @param url
+         * @param params
+         * @param headers
+         */
+        function post(url, params, headers) {
+            const req = {
+                method: 'POST',
+                url: url,
+                headers: headers,
+                data: params
+            };
+
+            return $http(req);
         }
     }
 
