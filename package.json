@@ -23,6 +23,7 @@
   "dependencies": {
     "angular-chart.js": "^1.1.1",
     "figlet": "^1.2.3",
+    "ngclipboard": "^2.0.0",
     "nodejs": "0.0.0",
     "oi.select": "^0.2.21"
   }

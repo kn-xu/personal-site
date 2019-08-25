@@ -1,7 +1,8 @@
 (function () {
     angular
         .module('app.hb', [
-            'app.factory'
+            'app.factory',
+            'ngclipboard'
         ])
         .component('heartBeats', {
             controller: HBController,

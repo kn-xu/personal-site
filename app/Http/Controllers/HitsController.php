@@ -25,7 +25,7 @@ class HitsController extends Controller
                 'ip' => $request->getClientIp()
             );
 
-            $heartBeat = HBModel::where('hb_url', $h)->first();
+            $heartBeat = HBModel::where('hb_url', 'h/' . $h)->first();
 
             if (!$heartBeat) {
                 abort(404);

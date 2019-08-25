@@ -29,6 +29,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
             'bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
             'bower_components/d3/d3.min.js',
             'node_modules/particlesjs/dist/particles.min.js',
+            'node_modules/clipboard/dist/clipboard.js',
+            'node_modules/ngclipboard/dist/ngclipboard.js',
             'bower_components/moment/min/moment-with-locales.min.js'
         ], 'public/js/library.js'
     )

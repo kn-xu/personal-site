@@ -47,7 +47,7 @@ class HeartbeatsController extends Controller
             $heartBeat->hash_id = $formData['hashed_id'];
             $heartBeat->saveOrFail();
 
-            $heartBeats = HBModel::where('hashed_id', $formData['hashed_id'])->get();
+            $heartBeats = HBModel::where('hash_id', $formData['hashed_id'])->get();
 
             return response()->json($heartBeats);
         } catch (\Exception $e) {

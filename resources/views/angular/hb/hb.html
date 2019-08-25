@@ -17,7 +17,10 @@
                 <label class="control-label">URL</label>
                 <input class="form-control" ng-model="ctrl.heartBeats[0].hb_url" disabled="disabled">
             </div>
-            <button type="button" class="btn btn-primary">Copy</button>
+            <button type="button" ngclipboard class="btn btn-primary"
+                    data-clipboard-text="{{ ctrl.heartBeats[0].hb_url }}">
+                Copy
+            </button>
         </div>
     </div>
     <hr class="my-4">
@@ -36,14 +39,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr ng-if="ctrl.heartBeats[0].hits.length" ng-repeat="hit in ctrl.heartBeats[0].hits">
-                            <td>{{ hit.created_at }}</td>
-                            <td>{{ hit.info.userAgent }}</td>
-                            <td>{{ hit.info.ip }}</td>
-                        </tr>
-                        <tr ng-if="!ctrl.heartBeats[0] || ctrl.heartBeats[0].hits.length < 1">
-                            <td colspan="3">No Data</td>
-                        </tr>
+                    <tr ng-if="ctrl.heartBeats[0].hits.length" ng-repeat="hit in ctrl.heartBeats[0].hits">
+                        <td>{{ hit.created_at }}</td>
+                        <td>{{ hit.info.userAgent }}</td>
+                        <td>{{ hit.info.ip }}</td>
+                    </tr>
+                    <tr ng-if="!ctrl.heartBeats[0] || ctrl.heartBeats[0].hits.length < 1">
+                        <td colspan="3" style="text-align: center"><strong>No Data</strong></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
