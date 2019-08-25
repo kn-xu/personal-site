@@ -18,7 +18,8 @@
                 <input class="form-control" ng-model="ctrl.heartBeats[0].hb_url" disabled="disabled">
             </div>
             <button type="button" ngclipboard class="btn btn-primary"
-                    data-clipboard-text="{{ ctrl.heartBeats[0].hb_url }}">
+                    data-clipboard-text="{{ ctrl.heartBeats[0].hb_url }}"
+                    ngclipboard-success="ctrl.onCopy(e);">
                 Copy
             </button>
         </div>

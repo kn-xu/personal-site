@@ -14,18 +14,22 @@
      * Dependency Injection to prevent issues during minification
      * @type {string[]}
      */
-    HBController.$inject = ['httpFactory'];
+    HBController.$inject = ['httpFactory', 'Notification'];
 
     /**
+     *
+     * @param httpFactory
+     * @param Notification
      * @constructor
      */
-    function HBController(httpFactory) {
+    function HBController(httpFactory, Notification) {
         var ctrl = this;
         ctrl.hashed_id = localStorage.getItem('hb');
         ctrl.heartBeats = [];
         ctrl.loading = true;
 
         ctrl.addHb = addHeartBeat;
+        ctrl.onCopy = onCopy;
 
         init();
 
@@ -85,6 +89,10 @@
                     .finally(function(response) {
                         ctrl.loading = false;
                     })
+        }
+
+        function onCopy(event) {
+            Notification.success('Successfully copied to clipboard!');
         }
     }
 })();

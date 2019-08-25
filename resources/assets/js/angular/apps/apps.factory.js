@@ -1081,7 +1081,7 @@
     function ErrorFactory(Notification) {
         return {
             error: error
-        }
+        };
 
         /**
          * Throws notification error
