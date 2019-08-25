@@ -41,8 +41,8 @@
                             <td>{{ hit.info.userAgent }}</td>
                             <td>{{ hit.info.ip }}</td>
                         </tr>
-                        <tr ng-if="ctrl.heartBeats[0].hits.length < 1">
-                            <td>No Data</td>
+                        <tr ng-if="!ctrl.heartBeats[0] || ctrl.heartBeats[0].hits.length < 1">
+                            <td colspan="3">No Data</td>
                         </tr>
                     </tbody>
                 </table>
