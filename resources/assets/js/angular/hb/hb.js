@@ -73,6 +73,11 @@
                 })
                     .then(function(response) {
                         ctrl.heartBeats = response.data;
+                        ctrl.heartBeats[0].hb_url = window.location.hostname + '/' + ctrl.heartBeats[0].hb_url;
+
+                        for (var i = 0; i < ctrl.heartBeats[0].hits.length; i++) {
+                            ctrl.heartBeats[0].hits[i].info = JSON.parse(ctrl.heartBeats[0].hits[i].info);
+                        }
                     })
                     .catch(function(response) {
 
